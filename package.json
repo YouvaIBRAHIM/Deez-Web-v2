@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "fetch-jsonp": "^1.2.1",
+    "moment": "^2.29.1",
     "mustache": "^4.2.0"
   }
 }

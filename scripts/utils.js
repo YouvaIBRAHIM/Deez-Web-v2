@@ -1,3 +1,4 @@
+
 export function addTrack(track, template, container) {
     let minutes = Math.floor(track.duration / 60);
     let seconds = track.duration - (minutes * 60);
@@ -28,7 +29,9 @@ export function previewTrack(data, track_template, infos_template) {
     let minutes = Math.floor(data.duration / 60);
     let seconds = data.duration - (minutes * 60);
     let duration = minutes + "m" + (seconds < 10 ? "0" + seconds :seconds);
-    
+   
+    let releaseDate = moment(data.release_date).locale("fr").format("DD MMM YYYY");
+
     let trackInfos = {
         id:data.id,
         title : data.title,
@@ -36,6 +39,7 @@ export function previewTrack(data, track_template, infos_template) {
         albumTitle:data.album.title,
         cover:data.album.cover_big,
         duration :duration,
+        releaseDate: releaseDate,
         preview :data.preview,
         albumLink: data.link,
         artistLink: data.link
@@ -144,21 +148,6 @@ export function getArtistCover(data,template,albumInfos) {
         document.getElementById("album").innerHTML += rendered;
     })
     .catch(err => console.log(err))
-    // .then(()=>{
-        
-    //     let trackListContainer = document.querySelector(".tracks_list .list-group")
-    //     let trackList = data.tracks.data;
-
-    //     if (trackList.length !== 0) {
-    //         trackList.map(track =>{
-    //             trackListContainer.innerHTML += `
-    //             <li class="list-group-item glassmorphism tracks_list_item"   aria-current="true">
-    //                 <a href="http://127.0.0.1:8080/pages/preview.html?id=${track.id}" class="flex">${track.title}</a>
-    //             </li>
-    //             `;
-    //         })
-    //     }
-    // })
 }
 
 export function favoriteMarkDisplay(trackId, favButton) {

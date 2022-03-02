@@ -78,11 +78,16 @@
             
             <div class="card-body">
                 <div class="flex title">
-                    <h4 class="card-title">{{title}}</h4>
+                    <h3 class="card-title">{{title}}</h3>
                     <i class="fa-solid fa-heart" id="fa-heart"></i>
                 </div>
-                <h5 class="card-text">{{artistName}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{duration}}</h6>
+                <h5 class="card-text text-muted">{{albumTitle}}</h5>
+                <h4 class="card-text">{{artistName}}</h4>
+                <div class="flex title mt-4">
+                    <h6 class="card-subtitle mb-2 text-muted">{{duration}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{releaseDate}}</h6>
+                </div>
+                
                 <div class="flex player">
                     <audio class="music"
                         controls
@@ -93,7 +98,7 @@
                     <a href="{{preview}}" class="btn btn-outline-primary flex play_btn"><i class="fa-solid fa-play"></i></a>
                     
                     <div class="flex indicator">
-                        <span class="timer"></span>
+                        <span class="timer">0:00</span>
                         <div class="slider">
                             <div class="progress"></div>
                         </div>
@@ -108,6 +113,7 @@
     <script src="https://unpkg.com/mustache@latest"></script>
     <script src="https://e-cdn-files.dzcdn.net/js/min/dz.js"></script>
     <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="../node_modules//fetch-jsonp/build/fetch-jsonp.js"></script>
     <script type="module" src="../scripts/preview.js"></script>
 </body>
