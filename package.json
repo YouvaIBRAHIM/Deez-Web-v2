@@ -1,0 +1,11 @@
+{
+  "name": "Deez'Web",
+  "version": "1.0.0",
+  "description": "Site pour écouter des extraits de musiques avec l'API Deezer",
+  "author": "Youva Ibrahim",
+  "license": "MIT",
+  "dependencies": {
+    "fetch-jsonp": "^1.2.1",
+    "mustache": "^4.2.0"
+  }
+}

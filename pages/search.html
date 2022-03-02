@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/search.css">
+
+    <title>Deez'Web</title>
+</head>
+<body>
+    <header>
+        <nav class="navBar glassmorphism">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./favorite.html"><i class="fa-solid fa-heart"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
+                    <ul class="dropdown-menu glassmorphism">
+                      <li><a class="dropdown-item glassmorphism" href="#">Logout</a></li>
+                    </ul>
+                  </li>
+              </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="input-group mb-3 mt-3 search">
+            <input type="text" class="form-control glassmorphism searchInput" placeholder="Rechercher" aria-label="Text input with dropdown button">
+            <select class="form-select glassmorphism filter" aria-label="Default select example">
+                <option value="RANKING" selected hidden>Trier</option>
+                <option value="ALBUM_ASC">Album (croissant)</option>
+                <option value="ARTIST_ASC">Artiste (croissant)</option>
+                <option value="TRACK_ASC">Titre (croissant)</option>
+                <option value="RATING_ASC">Popularité (croissant)</option>
+                <option value="RANKING">Rang (croissant)</option>
+            </select>
+            <a href="#" class="btn btn-primary search_btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+       <div class="flex container mb-1" id="searchs">
+            <!-- Cards render here -->
+       </div>
+       <div class="flex loaderContainer">
+            <div class="loader">
+       </div>
+    </main>
+    
+
+
+    <script id="template-search" type="x-tmpl-mustache">
+        <div class="card glassmorphism track" data-track-id="{{id}}" style="width: 18rem;">
+            <img src="{{cover}}" class="card-img-top" alt="{{albumTitle}}">
+            <div class="card-body">
+            <div class="flex title">
+                <h5 class="card-title">{{title}}</h5>
+                <i class="fa-solid fa-heart" id="fa-heart"></i>
+            </div>
+            <p class="card-text">{{artistName}}</p>
+            <h6 class="card-subtitle mb-2 text-muted">{{duration}}</h6>
+            <div class="flex action-buttons">
+                <a href="{{preview}}" class="btn btn-primary">Écouter</a>
+                <a href="{{albumLink}}" class="btn btn-primary">Album</a>
+                <a href="{{artistLink}}" class="btn btn-primary">Artiste</a>
+            </div>
+            </div>
+        </div>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="https://e-cdn-files.dzcdn.net/js/min/dz.js"></script>
+    <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
+    <script src="../node_modules//fetch-jsonp/build/fetch-jsonp.js"></script>
+    <script type="module" src="../scripts/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.artist{
+    margin: 10px 0;
+    justify-content: flex-start;
+}
+.artistImg{
+    width: 50px;
+}
+
+.artist h3{
+    position: relative;
+    left: 10px;
+}
+
+.tracks_list ul .tracks_list_item{
+    height: 50px;
+}
+.tracks_list ul .tracks_list_item a{
+    position: absolute;
+    width: 100%!important;
+    height: 100%!important;
+    top: 0;
+    left: 0;
+    justify-content: flex-start;
+    padding-left: 20px;
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,38 @@
+@import url("./loader.css");
+.search{
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    
+}
+
+.search::before{
+    background:white;
+}
+
+.searchInput{
+    width: 50%!important;
+    border: none;
+    color: white;
+}
+
+.searchInput:focus{
+    background: rgba(105, 105, 105, 0.534);
+    color: white;
+
+}
+.searchInput::placeholder{
+    color: rgb(187, 187, 187);
+
+}
+
+.filter{
+    color: white;
+}
+/* .filter::after{
+    color: white;
+} */
+
+.search_btn{
+    border-radius: 0rem!important;
+}
