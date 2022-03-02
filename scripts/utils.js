@@ -120,9 +120,7 @@ export function onToggleFavoriteMark(container) {
             let favButton = event.target;
             addToFavorites(favButton);
         }  
-    })
-
-    
+    }) 
 }
 
 export function getAlbumCover(data, template, artistInfos) {
@@ -144,21 +142,23 @@ export function getArtistCover(data,template,albumInfos) {
         albumInfos.artistCover = artistData.picture_big;
         let rendered = Mustache.render(template, albumInfos);
         document.getElementById("album").innerHTML += rendered;
-    }).then(()=>{
-        
-        let trackListContainer = document.querySelector(".tracks_list .list-group")
-        let trackList = data.tracks.data;
-
-        if (trackList.length !== 0) {
-            trackList.map(track =>{
-                trackListContainer.innerHTML += `
-                <li class="list-group-item glassmorphism tracks_list_item"   aria-current="true">
-                    <a href="http://127.0.0.1:8080/pages/preview.html?id=${track.id}" class="flex">${track.title}</a>
-                </li>
-                `;
-            })
-        }
     })
+    .catch(err => console.log(err))
+    // .then(()=>{
+        
+    //     let trackListContainer = document.querySelector(".tracks_list .list-group")
+    //     let trackList = data.tracks.data;
+
+    //     if (trackList.length !== 0) {
+    //         trackList.map(track =>{
+    //             trackListContainer.innerHTML += `
+    //             <li class="list-group-item glassmorphism tracks_list_item"   aria-current="true">
+    //                 <a href="http://127.0.0.1:8080/pages/preview.html?id=${track.id}" class="flex">${track.title}</a>
+    //             </li>
+    //             `;
+    //         })
+    //     }
+    // })
 }
 
 export function favoriteMarkDisplay(trackId, favButton) {

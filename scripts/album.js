@@ -16,14 +16,15 @@ function renderArtist(url_api) {
     fetchJsonp(url_api)
     .then(res => res.json())
     .then(data =>{
+        let trackList = data.tracks.data;
         albumInfos = {
             artistName : data.artist.name,
             albumsName : data.title,
             fansNb : data.nb_fan,
             albumImg:data.cover_big,
             deezerLink :data.link,
+            tracks: trackList,
         };
-
         getArtistCover(data, template, albumInfos)
         
     })

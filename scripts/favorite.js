@@ -14,7 +14,15 @@ function renderFavoriteTracks() {
         })
         onToggleFavoriteMark("cards");
     }
-    
+    let containerElement = document.getElementById("cards");
+    containerElement.addEventListener('click', (event) => {
+        
+        if (event.target.id === "fa-heart") {
+            let favButton = event.target;
+            let track = favButton.closest('.track');
+            track.style.display = "none";
+        }  
+    })
 }
 
 renderFavoriteTracks();

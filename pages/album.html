@@ -54,8 +54,12 @@
                 <a href="{{deezerLink}}" class="btn btn-primary mt-2 mb-3">Écouter sur Deezer</a>
                 <div class="tracks_list">
                     <ul class="list-group">
-                        
-                      </ul>
+                        {{#tracks}}
+                        <li class="list-group-item glassmorphism tracks_list_item" aria-current="true">
+                            <a href="http://127.0.0.1:8080/pages/preview.html?id={{id}}" class="flex">{{title}}</a>
+                        </li>
+                        {{/tracks}}
+                    </ul>
                 </div>
             </div>
         </div>

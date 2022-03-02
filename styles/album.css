@@ -25,3 +25,34 @@
     color: white;
     text-decoration: none;
 }
+
+@media (min-width: 768px) {
+
+    .card{
+        display: flex;
+        width: auto!important;
+        flex-direction: row;
+        margin: 10px 20px;
+        height: 400px;
+    }
+
+    .card > .card-img-top{
+        width: 400px;
+    }
+    .card-title{
+        height: 50px;
+        overflow: hidden;
+    }
+    .tracks_list{
+        height: 175px;
+        overflow:auto;
+    }
+    .tracks_list .list-group{
+       height: 100%;
+    }
+    .tracks_list .list-group .list-group-item a{
+        position: relative;
+        padding: 0;
+        
+     }
+}
